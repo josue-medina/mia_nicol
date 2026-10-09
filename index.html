@@ -8,3727 +8,1084 @@
 
 
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 
-<title>XV Años | Mia Nicole</title>
+  <title>XV Años | Mia Nicole</title>
 
 
 
-<link rel="preconnect" href="https\://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https\://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
 
-<link
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
-  href="https\://fonts.googleapis.com/css2?family=Cinzel:wght\@400;500;600;700&family=Great+Vibes&family=Montserrat:wght\@300;400;500;600&display=swap"
 
-  rel="stylesheet"
 
->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alice&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
 
-
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Alice&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
-
-:root {
-  --rojo: #8d0019;
-  --rojo-oscuro: #4d000d;
-  --rojo-claro: #c81d3b;
-  --rojo-carmesim: #b4122c;
-  --dorado: #c9a55c;
-  --dorado-brillante: #f5d77f;
-  --dorado-claro: #e3c984;
-  --dorado-oscuro: #8f6c25;
-  --crema: #f6efe4;
-  --crema-oscuro: #e7d8c3;
-  --crema-pergamino: #fdf8ef;
-  --negro: #161313;
-  --negro-terciopelo: #120813;
-  --negro-carta: #1c101c;
-  --azul-alicia: #7cb6d8;
-  --sombrerero-purpura: #3b1647;
-  --titulo: "Alice", "Cinzel Decorative", "Cinzel", serif;
-  --nombre: "Great Vibes", cursive;
-  --texto: "Montserrat", sans-serif;
-  --sombras-oro: 0 10px 30px rgba(201, 165, 92, 0.25);
-  --sombras-reina: 0 15px 40px rgba(141, 0, 25, 0.4);
-}
-
-/* =====================================================
-   GENERAL & DESIGN SYSTEM
-===================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--texto);
-  background: var(--crema);
-  color: var(--negro);
-  overflow-x: hidden;
-  line-height: 1.6;
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(201, 165, 92, 0.08) 0%, transparent 70%),
-    radial-gradient(circle at 0% 100%, rgba(141, 0, 25, 0.05) 0%, transparent 60%);
-}
-
-/* Scrollbar Customization */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--negro-terciopelo);
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--rojo), var(--dorado));
-  border-radius: 5px;
-  border: 2px solid var(--negro-terciopelo);
-}
-
-::selection {
-  background: var(--rojo);
-  color: var(--dorado-claro);
-}
-
-.seccion {
-  position: relative;
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.contenedor {
-  width: 100%;
-  max-width: 920px;
-  margin: auto;
-}
-
-h2 {
-  font-family: var(--titulo);
-  font-size: clamp(2.2rem, 7vw, 3.8rem);
-  color: var(--rojo);
-  margin-bottom: 25px;
-  text-shadow: 0 2px 10px rgba(141, 0, 25, 0.15);
-  letter-spacing: 1px;
-}
-
-.subtitulo {
-  font-family: var(--titulo);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  margin-bottom: 12px;
-  color: var(--dorado-oscuro);
-  font-weight: 600;
-}
-
-.claro,
-.titulo-claro {
-  color: #ffffff;
-}
-
-.titulo-claro {
-  text-shadow: 0 0 15px rgba(245, 215, 127, 0.4), 0 3px 12px rgba(0,0,0,0.8);
-}
-
-.corona,
-.simbolo {
-  display: inline-block;
-  color: var(--dorado);
-  font-size: 2.8rem;
-  margin-bottom: 15px;
-  filter: drop-shadow(0 4px 8px rgba(201, 165, 92, 0.3));
-  transition: transform 0.4s ease;
-}
-
-.corona:hover, .simbolo:hover {
-  transform: scale(1.15) rotate(5deg);
-}
-
-/* =====================================================
-   LLUVIA DE CARTAS (PLAYING CARD RAIN)
-===================================================== */
-.lluvia-cartas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.carta-lluvia {
-  position: absolute;
-  top: -120px;
-  width: 50px;
-  height: 72px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #ffffff 0%, #f7ebd9 100%);
-  border: 1.5px solid var(--dorado);
-  border-radius: 6px;
-  font-family: Georgia, serif;
-  font-size: 1.6rem;
-  font-weight: bold;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 0 8px rgba(201, 165, 92, 0.2);
-  opacity: 0;
-  animation-name: caerCarta;
-  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  animation-fill-mode: forwards;
-}
-
-.carta-roja {
-  color: var(--rojo);
-  text-shadow: 0 1px 2px rgba(141, 0, 25, 0.3);
-}
-
-.carta-negra {
-  color: var(--negro-carta);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes caerCarta {
-  0% {
-    transform: translateY(-100px) translateX(0) rotate(0deg) rotateX(0deg);
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.9;
-  }
-  40% {
-    transform: translateY(35vh) translateX(35px) rotate(180deg) rotateY(180deg);
-  }
-  70% {
-    transform: translateY(70vh) translateX(-30px) rotate(360deg) rotateX(180deg);
-  }
-  100% {
-    transform: translateY(125vh) translateX(25px) rotate(540deg) rotateY(360deg);
-    opacity: 0;
-  }
-}
-
-/* =====================================================
-   PORTADA (HERO SECTION)
-===================================================== */
-.portada {
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 50px 20px;
-  color: white;
-  overflow: hidden;
-  background: radial-gradient(circle at 50% 40%, rgba(141, 0, 25, 0.88) 0%, rgba(20, 4, 12, 0.98) 75%);
-}
-
-.portada::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url('patron-cartas.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.15;
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.portada::before {
-  content: "";
-  position: absolute;
-  inset: 20px;
-  border: 2px solid var(--dorado);
-  outline: 1px solid rgba(201, 165, 92, 0.3);
-  outline-offset: -8px;
-  pointer-events: none;
-  z-index: 4;
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
-}
-
-.portada-contenido {
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  max-width: 680px;
-  text-align: center;
-  padding: 20px;
-}
-
-.texto-pequeno {
-  font-family: var(--titulo);
-  letter-spacing: 8px;
-  font-size: 0.9rem;
-  color: var(--dorado-brillante);
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(245, 215, 127, 0.5);
-}
-
-.portada h1 {
-  font-family: var(--nombre);
-  font-size: clamp(4.8rem, 18vw, 8.5rem);
-  font-weight: normal;
-  line-height: 0.95;
-  background: linear-gradient(180deg, #ffffff 0%, var(--dorado-claro) 60%, var(--dorado) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.8));
-  margin: 10px 0;
-}
-
-.separador {
-  margin: 20px 0;
-  color: var(--dorado-brillante);
-  font-size: 2.4rem;
-  text-shadow: 0 0 15px rgba(201, 165, 92, 0.8);
-  animation: pulsoCrown 3s ease-in-out infinite;
-}
-
-@keyframes pulsoCrown {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px var(--dorado)); }
-  50% { transform: scale(1.12); filter: drop-shadow(0 0 18px var(--dorado-brillante)); }
-}
-
-.frase-portada {
-  max-width: 480px;
-  margin: auto;
-  line-height: 1.8;
-  font-family: var(--titulo);
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.92);
-  font-style: italic;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-}
-
-.fecha-portada {
-  margin: 28px 0 35px;
-  color: var(--dorado-claro);
-  font-family: var(--titulo);
-  letter-spacing: 6px;
-  font-size: 1.05rem;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-  border-top: 1px solid rgba(201, 165, 92, 0.3);
-  border-bottom: 1px solid rgba(201, 165, 92, 0.3);
-  display: inline-block;
-  padding: 10px 25px;
-}
-
-/* Royal Buttons */
-.btn-principal {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: linear-gradient(135deg, var(--rojo-carmesim) 0%, var(--rojo) 50%, var(--rojo-oscuro) 100%);
-  color: var(--dorado-brillante);
-  font-family: var(--titulo);
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  padding: 18px 38px;
-  border: 2px solid var(--dorado);
-  border-radius: 50px;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 10px 30px rgba(141, 0, 25, 0.5), inset 0 0 15px rgba(245, 215, 127, 0.3);
-  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  overflow: hidden;
-  z-index: 1;
-}
-
-.btn-principal::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-  transition: left 0.6s ease;
-  z-index: -1;
-}
-
-.btn-principal:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 15px 40px rgba(141, 0, 25, 0.7), 0 0 20px rgba(201, 165, 92, 0.6);
-  border-color: #ffffff;
-  color: #ffffff;
-}
-
-.btn-principal:hover::before {
-  left: 100%;
-}
-
-.btn-principal:active {
-  transform: translateY(-1px) scale(0.99);
-}
-
-.scroll-indicador {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  font-family: var(--titulo);
-  font-size: 0.8rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--dorado-claro);
-  opacity: 0.85;
-}
-
-.flecha {
-  font-size: 1.4rem;
-  margin-top: 5px;
-  animation: flotarFlecha 2s infinite;
-  color: var(--dorado-brillante);
-}
-
-@keyframes flotarFlecha {
-  0%, 100% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(8px); opacity: 1; }
-}
-
-/* =====================================================
-   BIENVENIDA
-===================================================== */
-.bienvenida {
-  background: linear-gradient(180deg, var(--crema) 0%, var(--crema-pergamino) 100%);
-}
-
-.bienvenida .contenedor {
-  background: rgba(253, 248, 239, 0.85);
-  padding: 50px 30px;
-  border-radius: 20px;
-  border: 1px solid var(--dorado-claro);
-  box-shadow: 0 15px 45px rgba(201, 165, 92, 0.15);
-  backdrop-filter: blur(5px);
-}
-
-.marco-foto {
-  position: relative;
-  width: min(280px, 75vw);
-  aspect-ratio: 4/5;
-  margin: 25px auto 35px;
-  border-radius: 180px 180px 20px 20px;
-  padding: 10px;
-  background: linear-gradient(135deg, var(--dorado-brillante) 0%, var(--dorado) 50%, var(--dorado-oscuro) 100%);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 0 0 20px rgba(201, 165, 92, 0.3);
-}
-
-.foto-mia {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 170px 170px 15px 15px;
-  display: block;
-  transition: transform 0.6s ease;
-  border: 2px solid #ffffff;
-}
-
-.marco-foto:hover .foto-mia {
-  transform: scale(1.04);
-}
-
-.texto-bienvenida {
-  font-size: 1.15rem;
-  line-height: 1.9;
-  max-width: 600px;
-  margin: 0 auto 20px;
-  color: var(--negro);
-}
-
-.texto-destacado {
-  font-family: var(--titulo);
-  font-size: 1.3rem;
-  color: var(--rojo);
-  font-weight: 600;
-  margin-top: 15px;
-}
-
-/* =====================================================
-   SEPARADOR ALICIA
-===================================================== */
-.separador-alicia {
-  width: 100%;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.separador-alicia img {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  border-radius: 20px;
-  border: 3px solid var(--dorado);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-  transition: transform 0.5s ease;
-}
-
-.separador-alicia img:hover {
-  transform: scale(1.015);
-}
-
-/* =====================================================
-   TRANSICIÓN CARTAS
-===================================================== */
-.transicion-cartas {
-  background: var(--negro-terciopelo);
-  padding: 25px 0;
-  border-top: 2px solid var(--dorado);
-  border-bottom: 2px solid var(--dorado);
-}
-
-.transicion-overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 35px;
-  font-size: 2rem;
-}
-
-.transicion-overlay span {
-  color: var(--dorado-brillante);
-  animation: pulsoSuit 2s ease-in-out infinite alternate;
-  filter: drop-shadow(0 0 8px var(--dorado));
-}
-
-.transicion-overlay span:nth-child(2) { color: #ffffff; animation-delay: 0.3s; }
-.transicion-overlay span:nth-child(3) { color: var(--rojo-claro); animation-delay: 0.6s; }
-.transicion-overlay span:nth-child(4) { color: var(--dorado-claro); animation-delay: 0.9s; }
-
-@keyframes pulsoSuit {
-  0% { transform: scale(1) translateY(0); }
-  100% { transform: scale(1.25) translateY(-4px); }
-}
-
-/* =====================================================
-   LA CORTE DE LA REINA
-===================================================== */
-.corte-reina {
-  background: linear-gradient(135deg, #3a000a 0%, #170004 60%, #0d0002 100%);
-  color: white;
-  overflow: hidden;
-  position: relative;
-}
-
-.decoracion-reina {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: clamp(6rem, 15vw, 12rem);
-  opacity: 0.08;
-  color: var(--rojo-claro);
-  pointer-events: none;
-}
-
-.decoracion-izquierda { left: -30px; }
-.decoracion-derecha { right: -30px; }
-
-.subtitulo-reina {
-  font-family: var(--titulo);
-  color: var(--dorado-brillante);
-  letter-spacing: 5px;
-  font-size: 0.95rem;
-  margin-bottom: 35px;
-  text-shadow: 0 0 10px rgba(245, 215, 127, 0.5);
-}
-
-.reina-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: center;
-  text-align: left;
-  background: rgba(20, 5, 10, 0.6);
-  padding: 40px;
-  border-radius: 24px;
-  border: 2px solid var(--dorado);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(141, 0, 25, 0.3);
-}
-
-.reina-imagen-contenedor {
-  position: relative;
-  text-align: center;
-}
-
-.corona-reina {
-  font-size: 3rem;
-  color: var(--dorado-brillante);
-  margin-bottom: -15px;
-  position: relative;
-  z-index: 2;
-  animation: pulsoCrown 2.5s infinite;
-}
-
-.imagen-reina {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.7));
-  transition: transform 0.5s ease;
-}
-
-.imagen-reina:hover {
-  transform: scale(1.05) rotate(2deg);
-}
-
-.reina-texto {
-  background: rgba(253, 248, 239, 0.96);
-  color: var(--negro);
-  padding: 35px 30px;
-  border-radius: 16px;
-  border: 2px solid var(--dorado);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.reina-corazon {
-  color: var(--rojo);
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.reina-pretexto {
-  font-family: var(--titulo);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 0.8rem;
-  color: var(--rojo);
-}
-
-.reina-texto h2 {
-  color: var(--rojo);
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  margin-bottom: 15px;
-  line-height: 1.1;
-}
-
-.reina-texto h2 span {
-  font-family: var(--nombre);
-  display: block;
-  font-size: 3.2rem;
-  color: var(--rojo-oscuro);
-  font-weight: normal;
-}
-
-.separador-reina {
-  color: var(--dorado-oscuro);
-  letter-spacing: 6px;
-  font-size: 1.2rem;
-  margin: 15px 0;
-}
-
-.reina-mensaje {
-  font-family: var(--titulo);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--rojo-oscuro);
-  margin-bottom: 10px;
-}
-
-.reina-descripcion {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #333333;
-  margin-bottom: 20px;
-}
-
-.reina-fecha {
-  display: inline-block;
-  background: var(--rojo);
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-family: var(--titulo);
-  letter-spacing: 2px;
-  font-size: 0.9rem;
-  box-shadow: 0 6px 18px rgba(141, 0, 25, 0.4);
-}
-
-.reina-fecha strong {
-  font-size: 1.4rem;
-  color: var(--dorado-brillante);
-  margin: 0 6px;
-}
-
-/* =====================================================
-   FRANJA REINA
-===================================================== */
-.franja-reina {
-  background: linear-gradient(90deg, var(--rojo-oscuro) 0%, var(--rojo) 50%, var(--rojo-oscuro) 100%);
-  color: var(--dorado-brillante);
-  padding: 18px 20px;
-  font-family: var(--titulo);
-  letter-spacing: 4px;
-  font-size: 1.05rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  border-top: 2px solid var(--dorado);
-  border-bottom: 2px solid var(--dorado);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
-
-.franja-reina span {
-  font-size: 1.3rem;
-}
-
-/* =====================================================
-   CUENTA REGRESIVA
-===================================================== */
-.cuenta-regresiva {
-  background: radial-gradient(circle at center, #1b0a1c 0%, #0c040d 100%);
-  color: white;
-  padding: 110px 20px;
-}
-
-.reloj-icono {
-  font-size: 3.5rem;
-  margin-bottom: 15px;
-  display: inline-block;
-  animation: balanceoClock 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 15px rgba(245, 215, 127, 0.5));
-}
-
-@keyframes balanceoClock {
-  0%, 100% { transform: rotate(-8deg); }
-  50% { transform: rotate(8deg); }
-}
-
-.fecha-evento {
-  font-family: var(--titulo);
-  color: var(--dorado-claro);
-  letter-spacing: 3px;
-  font-size: 1rem;
-  margin-bottom: 40px;
-}
-
-.contador {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  max-width: 750px;
-  margin: auto;
-}
-
-.contador-item {
-  background: rgba(35, 12, 38, 0.85);
-  border: 2px solid var(--dorado);
-  border-radius: 18px;
-  padding: 22px 18px;
-  min-width: 125px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(201, 165, 92, 0.2);
-  backdrop-filter: blur(8px);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.contador-item:hover {
-  transform: translateY(-6px);
-  border-color: #ffffff;
-}
-
-.contador-item span {
-  font-family: var(--titulo);
-  font-size: clamp(2.2rem, 6vw, 3.2rem);
-  font-weight: 700;
-  color: var(--dorado-brillante);
-  display: block;
-  line-height: 1;
-  text-shadow: 0 0 12px rgba(245, 215, 127, 0.6);
-}
-
-.contador-item small {
-  font-family: var(--titulo);
-  letter-spacing: 3px;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 8px;
-  display: block;
-}
-
-/* =====================================================
-   LUGAR (CEREMONIA & RECEPCIÓN)
-===================================================== */
-.lugar {
-  background: var(--crema);
-}
-
-.tarjeta-lugar {
-  background: var(--crema-pergamino);
-  border: 2px solid var(--dorado);
-  border-radius: 20px;
-  padding: 45px 30px;
-  max-width: 550px;
-  margin: 30px auto 0;
-  box-shadow: 0 15px 40px rgba(201, 165, 92, 0.2);
-  position: relative;
-  overflow: hidden;
-}
-
-.tarjeta-lugar::before {
-  content: "♥";
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 1.8rem;
-  color: rgba(141, 0, 25, 0.15);
-}
-
-.icono-lugar {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  display: inline-block;
-  background: linear-gradient(135deg, var(--dorado-brillante), var(--dorado-oscuro));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
-}
-
-.tarjeta-lugar h3 {
-  font-family: var(--titulo);
-  letter-spacing: 4px;
-  color: var(--rojo);
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.nombre-lugar {
-  font-family: var(--titulo);
-  font-size: 1.8rem;
-  color: var(--negro);
-  margin-bottom: 10px;
-}
-
-.tarjeta-lugar strong {
-  display: block;
-  font-size: 1.4rem;
-  color: var(--rojo-carmesim);
-  margin: 10px 0;
-  font-family: var(--titulo);
-}
-
-.direccion {
-  color: #666666;
-  margin-bottom: 25px;
-  font-size: 0.95rem;
-}
-
-.btn-secundario {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: var(--rojo);
-  font-family: var(--titulo);
-  font-weight: 600;
-  letter-spacing: 2px;
-  padding: 14px 30px;
-  border: 2px solid var(--rojo);
-  border-radius: 40px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.btn-secundario:hover {
-  background: var(--rojo);
-  color: white;
-  box-shadow: 0 8px 25px rgba(141, 0, 25, 0.4);
-  transform: translateY(-2px);
-}
-
-/* Cheshire Cat Floating Animation */
-.gato-recepcion {
-  width: min(240px, 60vw);
-  height: auto;
-  margin: 0 auto 20px;
-  display: block;
-  filter: drop-shadow(0 10px 25px rgba(123, 75, 178, 0.5));
-  animation: gatoFlotante 4s ease-in-out infinite;
-}
-
-@keyframes gatoFlotante {
-  0%, 100% { transform: translateY(0) rotate(-2deg) scale(1); }
-  50% { transform: translateY(-12px) rotate(2deg) scale(1.04); }
-}
-
-/* =====================================================
-   ITINERARIO
-===================================================== */
-.itinerario {
-  background: linear-gradient(180deg, #17051a 0%, #290a2e 100%);
-  color: white;
-  padding: 100px 20px;
-}
-
-.conejo-animado {
-  width: min(180px, 50vw);
-  height: auto;
-  margin: 0 auto 20px;
-  display: block;
-  filter: drop-shadow(0 10px 20px rgba(245, 215, 127, 0.4));
-  animation: conejoSaltarin 3s ease-in-out infinite;
-}
-
-@keyframes conejoSaltarin {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(-3deg); }
-}
-
-.itinerario-intro {
-  color: var(--dorado-claro);
-  font-family: var(--titulo);
-  margin-bottom: 50px;
-  font-style: italic;
-}
-
-.timeline {
-  position: relative;
-  max-width: 650px;
-  margin: auto;
-  padding-left: 20px;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 30px;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, var(--dorado-brillante), var(--rojo-claro), var(--dorado));
-  border-radius: 2px;
-}
-
-.evento {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  margin-bottom: 35px;
-  position: relative;
-  text-align: left;
-}
-
-.hora {
-  font-family: var(--titulo);
-  font-weight: 700;
-  color: var(--dorado-brillante);
-  min-width: 110px;
-  font-size: 1.1rem;
-  text-align: right;
-  text-shadow: 0 0 8px rgba(245, 215, 127, 0.4);
-}
-
-.punto {
-  width: 32px;
-  height: 32px;
-  background: var(--rojo);
-  color: var(--dorado-brillante);
-  border: 2px solid var(--dorado);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  z-index: 2;
-  box-shadow: 0 0 12px rgba(201, 165, 92, 0.6);
-  flex-shrink: 0;
-}
-
-.evento-info {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(201, 165, 92, 0.3);
-  padding: 15px 25px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  flex: 1;
-  backdrop-filter: blur(5px);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.evento-info:hover {
-  transform: translateX(6px);
-  border-color: var(--dorado-brillante);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.evento-info span {
-  font-size: 1.8rem;
-}
-
-.evento-info h3 {
-  font-family: var(--titulo);
-  font-size: 1.2rem;
-  color: white;
-  font-weight: 500;
-}
-
-/* =====================================================
-   DRESS CODE
-===================================================== */
-.dress-code {
-  background: linear-gradient(135deg, #2b0007 0%, #150003 100%);
-  color: white;
-}
-
-.dress-code .contenedor {
-  background: rgba(20, 5, 10, 0.7);
-  padding: 50px 30px;
-  border-radius: 20px;
-  border: 2px solid var(--dorado);
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
-}
-
-.dress-iconos {
-  font-size: 2.2rem;
-  color: var(--dorado-brillante);
-  margin: 20px 0;
-  letter-spacing: 15px;
-}
-
-.dress-code h3 {
-  font-family: var(--titulo);
-  font-size: 2.2rem;
-  letter-spacing: 6px;
-  color: var(--dorado-brillante);
-  margin-bottom: 15px;
-}
-
-.linea-dorada {
-  width: 80px;
-  height: 2px;
-  background: var(--dorado);
-  margin: 20px auto;
-}
-
-.dress-code p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* =====================================================
-   GALERÍA DE MIA
-===================================================== */
-.galeria-mia {
-  background: var(--crema);
-  position: relative;
-}
-
-.galeria-intro {
-  max-width: 550px;
-  margin: 0 auto 35px;
-  color: #555555;
-}
-
-.fotos-mia {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 750px;
-  margin: 0 auto 30px;
-}
-
-.marco-mia {
-  background: var(--crema-pergamino);
-  padding: 15px;
-  border-radius: 16px;
-  border: 2px solid var(--dorado);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.marco-mia:hover {
-  transform: translateY(-8px) rotate(1deg);
-  box-shadow: 0 20px 40px rgba(201, 165, 92, 0.3);
-}
-
-.marco-mia img {
-  width: 100%;
-  aspect-ratio: 4/5;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-}
-
-.galeria-frase {
-  font-family: var(--titulo);
-  font-size: 1.25rem;
-  color: var(--rojo);
-  font-style: italic;
-  margin-top: 25px;
-}
-
-/* =====================================================
-   CONFIRMACIÓN
-===================================================== */
-.confirmacion {
-  background: linear-gradient(180deg, var(--crema-pergamino) 0%, var(--crema) 100%);
-}
-
-.sobre {
-  font-size: 4rem;
-  color: var(--rojo);
-  margin-bottom: 15px;
-  display: inline-block;
-  animation: flotarSobre 3s ease-in-out infinite;
-  filter: drop-shadow(0 6px 12px rgba(141, 0, 25, 0.2));
-}
-
-@keyframes flotarSobre {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.texto-confirmacion {
-  font-size: 1.15rem;
-  max-width: 520px;
-  margin: 0 auto 35px;
-  color: #444444;
-}
-
-/* =====================================================
-   FINAL (FOOTER)
-===================================================== */
-.final {
-  background: linear-gradient(180deg, #170005 0%, #0a0002 100%);
-  color: white;
-  padding: 80px 20px 50px;
-  border-top: 3px solid var(--dorado);
-  text-align: center;
-}
-
-.corona-final {
-  font-size: 3rem;
-  color: var(--dorado-brillante);
-  margin-bottom: 15px;
-  display: inline-block;
-}
-
-.final p {
-  font-family: var(--titulo);
-  letter-spacing: 5px;
-  font-size: 0.85rem;
-  color: var(--dorado-claro);
-}
-
-.final h2 {
-  font-family: var(--nombre);
-  font-size: clamp(3.5rem, 10vw, 5.5rem);
-  color: white;
-  margin: 10px 0;
-  font-weight: normal;
-}
-
-.fecha-final {
-  color: var(--dorado);
-  letter-spacing: 4px;
-  margin-bottom: 25px;
-}
-
-.simbolos {
-  font-size: 1.8rem;
-  color: var(--rojo-claro);
-  letter-spacing: 15px;
-  margin: 25px 0;
-}
-
-.gracias {
-  font-family: var(--titulo);
-  font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.85);
-  font-style: italic;
-}
-
-/* =====================================================
-   MEDIA QUERIES (RESPONSIVE)
-===================================================== */
-@media (max-width: 768px) {
-  .reina-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 25px;
-  }
-  
-  .reina-texto {
-    padding: 25px 20px;
-  }
-
-  .timeline::before {
-    left: 15px;
-  }
-
-  .hora {
-    min-width: 85px;
-    font-size: 0.95rem;
-  }
-  
-  .punto {
-    width: 28px;
-    height: 28px;
-    font-size: 0.8rem;
-  }
-
-  .evento-info {
-    padding: 12px 18px;
-  }
-
-  .franja-reina {
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    padding: 14px 10px;
-  }
-}
-
-@media (max-width: 600px) {
-  .seccion {
-    padding: 70px 15px;
-  }
-
-  .contador {
-    gap: 12px;
-  }
-
-  .contador-item {
-    min-width: 75px;
-    padding: 15px 10px;
-  }
-
-  .contador-item span {
-    font-size: 2rem;
-  }
-
-  .contador-item small {
-    font-size: 0.65rem;
-    letter-spacing: 1px;
-  }
-
-  .btn-principal {
-    padding: 15px 28px;
-    font-size: 0.95rem;
-  }
-}
-</style>
-
-
-
-</head>
-
-
-
-
-
-<body>
-
-
-
-
-
-<!-- ===================================================
-
-     MÚSICA
-
-\=================================================== -->
-
-
-
-<audio
-
-  id="musicaFondo"
-
-  loop
-
-  preload="auto"
-
->
-
-  <source
-
-    src="vals1.mp3"
-
-    type="audio/mpeg"
-
-  >
-
-</audio>
-
-
-
-
-
-<!-- ===================================================
-
-     PORTADA
-
-\=================================================== -->
-
-
-
-<section
-
-  class="portada"
-
-  id="inicio"
-
->
-
-
-
-<div
-
-  class="lluvia-cartas"
-
-  id="lluviaCartas"
-
-></div>
-
-
-
-
-
-<div class="portada-contenido">
-
-
-
-  <p class="texto-pequeno">
-
-    MIS XV AÑOS
-
-  </p>
-
-
-
-  <h1>
-
-    Mia Nicole
-
-  </h1>
-
-
-
-  <div class="separador">
-
-    ♛
-
-  </div>
-
-
-
-  <p class="frase-portada">
-
-    Una maravillosa aventura
-
-    está por comenzar...
-
-  </p>
-
-
-
-  <p class="fecha-portada">
-
-    01 · NOVIEMBRE · 2026
-
-  </p>
-
-
-
-  <button
-
-    class="btn-principal"
-
-    id="btnEntrar"
-
-  >
-
-    ♥ ENTRAR A LA INVITACIÓN
-
-  </button>
-
-
-
-</div>
-
-
-
-
-
-<div class="scroll-indicador">
-
-
-
-  Bienvenidos
-
-
-
-  <div class="flecha">
-
-    ↓
-
-  </div>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-<!-- ===================================================
-
-     BIENVENIDA
-
-\=================================================== -->
-
-
-
-<section
-
-  class="seccion bienvenida"
-
-  id="bienvenida"
-
->
-
-
-
-<div class="contenedor">
-
-
-
-  <span class="corona">
-
-    ♛
-
-  </span>
-
-
-
-  <p class="subtitulo">
-
-    Érase una vez...
-
-  </p>
-
-
-
-  <h2>
-
-    Mia Nicole
-
-  </h2>
-
-
-
-
-
-  <div class="marco-foto">
-
-
-
-    <img
-
-      src="vestido.jpeg"
-
-      alt="Mia Nicole"
-
-      class="foto-mia"
-
-    >
-
-
-
-  </div>
-
-
-
-
-
-  <p class="texto-bienvenida">
-
-
-
-    Hay momentos en la vida
-
-    que imaginamos como un sueño,
-
-    y personas especiales que
-
-    hacen que ese sueño sea
-
-    inolvidable.
-
-
-
-  </p>
-
-
-
-
-
-  <p class="texto-destacado">
-
-
-
-    Quiero que formes parte
-
-    de esta maravillosa aventura.
-
-
-
-  </p>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-<div class="separador-alicia">
-  <img src="reina3.jpg" alt="Decoración inspirada en Alicia en el País de las Maravillas">
-</div>
-
-
-<!-- ===================================================
-
-     PATRÓN DE CARTAS
-
-\=================================================== -->
-
-
-
-<div class="transicion-cartas">
-
-
-
-  <div class="transicion-overlay">
-
-
-
-    <span>♥</span>
-
-
-
-    <span>♠</span>
-
-
-
-    <span>♦</span>
-
-
-
-    <span>♣</span>
-
-
-
-  </div>
-
-
-
-</div>
-
-
-
-
-
-<!-- ===================================================
-
-     LA CORTE DE LA REINA
-
-\=================================================== -->
-
-
-
-<section class="seccion corte-reina">
-
-
-
-
-
-<div class="decoracion-reina decoracion-izquierda">
-
-  ♥
-
-</div>
-
-
-
-
-
-<div class="decoracion-reina decoracion-derecha">
-
-  ♦
-
-</div>
-
-
-
-
-
-<div class="contenedor">
-
-
-
-
-
-<p class="subtitulo-reina">
-
-
-
-  ♛ POR ORDEN DE LA REINA ♛
-
-
-
-</p>
-
-
-
-
-
-<div class="reina-grid">
-
-
-
-
-
-<!-- IMAGEN -->
-
-
-
-<div class="reina-imagen-contenedor">
-
-
-
-  <div class="corona-reina">
-
-    ♛
-
-  </div>
-
-
-
-  <img
-
-    src="reina.png"
-
-    alt="Reina de Corazones"
-
-    class="imagen-reina"
-
-  >
-
-
-
-</div>
-
-
-
-
-
-<!-- TEXTO -->
-
-
-
-<div class="reina-texto">
-
-
-
-  <span class="reina-corazon">
-
-    ♥
-
-  </span>
-
-
-
-
-
-  <p class="reina-pretexto">
-
-
-
-    Has sido invitado a
-
-
-
-  </p>
-
-
-
-
-
-  <h2>
-
-
-
-    La Corte de
-
-
-
-    <span>
-
-      Mia Nicole
-
-    </span>
-
-
-
-  </h2>
-
-
-
-
-
-  <div class="separador-reina">
-
-
-
-    ♦ ♥ ♦
-
-
-
-  </div>
-
-
-
-
-
-  <p class="reina-mensaje">
-
-
-
-    Las puertas del reino
-
-    están por abrirse...
-
-
-
-  </p>
-
-
-
-
-
-  <p class="reina-descripcion">
-
-
-
-    Has sido elegido para formar
-
-    parte de una noche llena de
-
-    magia, corazones y aventuras.
-
-
-
-  </p>
-
-
-
-
-
-  <p class="reina-fecha">
-
-
-
-    DOMINGO
-
-
-
-    <strong>
-
-      01
-
-    </strong>
-
-
-
-    NOVIEMBRE
-
-
-
-    <small>
-
-      2026
-
-    </small>
-
-
-
-  </p>
-
-
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-<!-- ===================================================
-
-     FRANJA
-
-\=================================================== -->
-
-
-
-<div class="franja-reina">
-
-
-
-  <span>
-
-    ♠
-
-  </span>
-
-
-
-  <span>
-
-    ♥
-
-  </span>
-
-
-
-  <strong>
-
-    QUE COMIENCE LA AVENTURA
-
-  </strong>
-
-
-
-  <span>
-
-    ♦
-
-  </span>
-
-
-
-  <span>
-
-    ♣
-
-  </span>
-
-
-
-</div>
-
-
-
-
-
-<!-- ===================================================
-
-     CUENTA REGRESIVA
-
-\=================================================== -->
-
-
-
-<section class="seccion cuenta-regresiva">
-
-
-
-<div class="contenedor">
-
-
-
-  <div class="reloj-icono">
-
-    🕰️
-
-  </div>
-
-
-
-  <p class="subtitulo claro">
-
-    El tiempo está corriendo...
-
-  </p>
-
-
-
-  <h2 class="titulo-claro">
-
-    ¡NO LLEGUES TARDE!
-
-  </h2>
-
-
-
-  <p class="fecha-evento">
-
-    DOMINGO 1 DE NOVIEMBRE · 1:00 PM
-
-  </p>
-
-
-
-
-
-  <div class="contador">
-
-
-
-
-
-    <div class="contador-item">
-
-
-
-      <span id="dias">
-
-        00
-
-      </span>
-
-
-
-      <small>
-
-        DÍAS
-
-      </small>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="contador-item">
-
-
-
-      <span id="horas">
-
-        00
-
-      </span>
-
-
-
-      <small>
-
-        HORAS
-
-      </small>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="contador-item">
-
-
-
-      <span id="minutos">
-
-        00
-
-      </span>
-
-
-
-      <small>
-
-        MIN
-
-      </small>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="contador-item">
-
-
-
-      <span id="segundos">
-
-        00
-
-      </span>
-
-
-
-      <small>
-
-        SEG
-
-      </small>
-
-
-
-    </div>
-
-
-
-
-
-  </div>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-<!-- ===================================================
-
-     CEREMONIA
-
-\=================================================== -->
-
-
-
-<section class="seccion lugar">
-
-
-
-<div class="contenedor">
-
-
-
-  <span class="simbolo">
-
-    ♥
-
-  </span>
-
-
-
-  <p class="subtitulo">
-
-    Nuestro primer destino
-
-  </p>
-
-
-
-  <h2>
-
-    Ceremonia
-
-  </h2>
-
-
-
-
-
-  <div class="tarjeta-lugar">
-
-
-
-
-
-    <div class="icono-lugar">
-
-      ⛪
-
-    </div>
-
-
-
-
-
-    <h3>
-
-      TEMPLO
-
-    </h3>
-
-
-
-
-
-    <p class="nombre-lugar">
-
-      Templo de Cristo Rey
-
-    </p>
-
-
-
-
-
-    <p>
-
-      Domingo 1 de noviembre
-
-    </p>
-
-
-
-
-
-    <strong>
-
-      1:00 PM
-
-    </strong>
-
-
-
-
-
-    <p class="direccion">
-
-      Morelia, Michoacán
-
-    </p>
-
-
-
-
-
-    <a
-
-      href="https://www.google.com/maps/place/Templo+de+Cristo+Rey/@19.7002622,-101.1967732,903m/data=!3m2!1e3!4b1!4m6!3m5!1s0x842d0f0054dee5fd:0x87c9b094f4a903b!8m2!3d19.7002622!4d-101.1967732!16s%2Fg%2F11x8j_5z8z!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MTAwNi4wIKXMDSoASAFQAw%3D%3D"
-
-      class="btn-secundario"
-
-      target="_blank"
-
-      rel="noopener noreferrer"
-
-    >
-
-      ♠ CÓMO LLEGAR
-
-    </a>
-
-
-
-
-
-  </div>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-<!-- ===================================================
-
-     ITINERARIO
-
-=================================================== -->
-
-<section class="seccion itinerario">
-  <div class="contenedor">
-    <img src="reina4.png" alt="Conejo Blanco" class="conejo-animado">
-    <p class="subtitulo claro">Sigue al Conejo Blanco</p>
-    <h2 class="titulo-claro">ITINERARIO</h2>
-    <p class="itinerario-intro">No llegues tarde a esta maravillosa aventura.</p>
-
-    <div class="timeline">
-      <div class="evento">
-        <div class="hora">1:00 PM</div><div class="punto">♥</div>
-        <div class="evento-info"><span>⛪</span><h3>Misa</h3></div>
-      </div>
-      <div class="evento">
-        <div class="hora">4:00 PM</div><div class="punto">♦</div>
-        <div class="evento-info"><span>🥂</span><h3>Recepción</h3></div>
-      </div>
-      <div class="evento">
-        <div class="hora">5:00 PM</div><div class="punto">♣</div>
-        <div class="evento-info"><span>🍽️</span><h3>Comida</h3></div>
-      </div>
-      <div class="evento">
-        <div class="hora">6:00 PM</div><div class="punto">♥</div>
-        <div class="evento-info"><span>💃</span><h3>Vals</h3></div>
-      </div>
-      <div class="evento">
-        <div class="hora">7:00 - 11:00 PM</div><div class="punto">♛</div>
-        <div class="evento-info"><span>🎺</span><h3>Banda</h3></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ===================================================
-
-     RECEPCIÓN
-
-\=================================================== -->
-
-
-
-<section class="seccion lugar">
-
-
-
-<div class="contenedor">
-
-
-
-  <span class="simbolo">
-
-    ♛
-
-  </span>
-
-
-
-  <img
-    src="gato.png"
-    alt="Gato de Cheshire"
-    class="gato-recepcion"
-    loading="lazy"
-  >
-
-  <p class="subtitulo">
-
-    Nuestro siguiente destino
-
-  </p>
-
-
-
-  <h2>
-
-    Recepción
-
-  </h2>
-
-
-
-
-
-  <div class="tarjeta-lugar">
-
-
-
-
-
-    <div class="icono-lugar">
-
-      🏰
-
-    </div>
-
-
-
-
-
-    <h3>
-
-      SALÓN
-
-    </h3>
-
-
-
-
-
-    <p class="nombre-lugar">
-
-      Quinta Antonelli
-
-    </p>
-
-
-
-
-
-    <p>
-
-      Domingo 1 de noviembre
-
-    </p>
-
-
-
-
-
-    <strong>
-
-      4:00 PM
-
-    </strong>
-
-
-
-
-
-    <p class="direccion">
-
-      Quinta Antonelli · Morelia, Michoacán
-
-    </p>
-
-
-
-
-
-    <a
-
-      href="https://www.google.com/maps/place/ESTACIONAMIENTO+Quinta+Antonelli/@19.6872848,-101.2493978,903m/data=!3m2!1e3!4b1!4m6!3m5!1s0x842d0d00732118eb:0xb1fcf4f7bcd79c81!8m2!3d19.6872848!4d-101.2493978!16s%2Fg%2F11x2plxp9t!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MTAwNi4wIKXMDSoASAFQAw%3D%3D"
-
-      class="btn-secundario"
-
-      target="_blank"
-
-      rel="noopener noreferrer"
-
-    >
-
-      ♥ CÓMO LLEGAR
-
-    </a>
-
-
-
-
-
-  </div>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-<!-- ===================================================
-
-     DRESS CODE
-
-\=================================================== -->
-
-
-
-<section class="seccion dress-code">
-
-
-
-<div class="contenedor">
-
-
-
-
-
-<span class="corona">
-
-  ♛
-
-</span>
-
-
-
-
-
-<p class="subtitulo claro">
-
-  Código de la corte
-
-</p>
-
-
-
-
-
-<h2 class="titulo-claro">
-
-  DRESS CODE
-
-</h2>
-
-
-
-
-
-<div class="dress-iconos">
-
-  ♀   ♛   ♂
-
-</div>
-
-
-
-
-
-<h3>
-
-  FORMAL
-
-</h3>
-
-
-
-
-
-<div class="linea-dorada"></div>
-
-
-
-
-
-<p>
-
-
-
-  Prepárate para una noche
-
-  llena de magia.
-
-
-
-</p>
-
-
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-<!-- ===================================================
-     GALERÍA DE MIA
-=================================================== -->
-<section class="seccion galeria-mia">
-  <div class="lluvia-cartas" id="lluviaGaleria" aria-hidden="true"></div>
-  <div class="contenedor">
-    <span class="simbolo">♥</span>
-    <p class="subtitulo">Un recuerdo de esta aventura</p>
-    <h2>Mia Nicole</h2>
-    <p class="galeria-intro">Dos momentos especiales de mi sesión de fotos, antes de comenzar este maravilloso capítulo.</p>
-    <div class="fotos-mia">
-      <figure class="marco-mia"><img src="mia1.jpeg" alt="Sesión de fotos de Mia Nicol 1" loading="lazy"></figure>
-      <figure class="marco-mia"><img src="mia2.jpeg" alt="Sesión de fotos de Mia Nicol 2" loading="lazy"></figure>
-    </div>
-    <p class="galeria-frase">Cada momento es parte de mi cuento...</p>
-  </div>
-</section>
-
-<!-- ===================================================
-
-     CONFIRMACIÓN
-
-\=================================================== -->
-
-
-
-<section class="seccion confirmacion">
-
-
-
-<div class="contenedor">
-
-
-
-
-
-<div class="sobre">
-
-  ✉
-
-</div>
-
-
-
-
-
-<p class="subtitulo">
-
-  Una última pregunta...
-
-</p>
-
-
-
-
-
-<h2>
-
-  ¿NOS ACOMPAÑAS?
-
-</h2>
-
-
-
-
-
-<p class="texto-confirmacion">
-
-
-
-  El Sombrerero está preparando
-
-  la mesa y queremos reservar
-
-  un lugar para ti.
-
-
-
-</p>
-
-
-
-
-
-<a
-
-  href="#"
-
-  class="btn-principal"
-
-  id="btnWhatsapp"
-
->
-
-  ♥ CONFIRMAR ASISTENCIA
-
-</a>
-
-
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-<!-- ===================================================
-
-     FINAL
-
-\=================================================== -->
-
-
-
-<footer class="final">
-
-
-
-<div class="final-contenido">
-
-
-
-
-
-<span class="corona-final">
-
-  ♛
-
-</span>
-
-
-
-
-
-<p>
-
-  MIS XV AÑOS
-
-</p>
-
-
-
-
-
-<h2>
-
-  Mia Nicole
-
-</h2>
-
-
-
-
-
-<p class="fecha-final">
-
-  01 · NOVIEMBRE · 2026
-
-</p>
-
-
-
-
-
-<div class="simbolos">
-
-  ♥ ♠ ♦ ♣
-
-</div>
-
-
-
-
-
-<p class="gracias">
-
-
-
-  Gracias por acompañarme
-
-  en esta maravillosa aventura.
-
-
-
-</p>
-
-
-
-
-
-</div>
-
-
-
-</footer>
-
-
-
-
-
-<script>
-
-
-
-/* =====================================================
-
-   LLUVIA DE CARTAS
-
-\===================================================== */
-
-
-
-const lluviaCartas =
-
-  document.getElementById(
-
-    "lluviaCartas"
-
-  );
-
-
-
-
-
-const simbolosCartas = [
-
-  "♥",
-
-  "♠",
-
-  "♦",
-
-  "♣"
-
-];
-
-
-
-
-
-function crearCarta() {
-
-
-
-  const carta =
-
-    document.createElement(
-
-      "div"
-
-    );
-
-
-
-
-
-  carta.classList.add(
-
-    "carta-lluvia"
-
-  );
-
-
-
-
-
-  const simbolo =
-
-
-
-    simbolosCartas[
-
-      Math.floor(
-
-        Math.random() *
-
-        simbolosCartas.length
-
-      )
-
-    ];
-
-
-
-
-
-  carta.textContent =
-
-    simbolo;
-
-
-
-
-
-  if (
-
-    simbolo === "♥" ||
-
-    simbolo === "♦"
-
-  ) {
-
-
-
-    carta.classList.add(
-
-      "carta-roja"
-
-    );
-
-
-
-  } else {
-
-
-
-    carta.classList.add(
-
-      "carta-negra"
-
-    );
-
-
-
-  }
-
-
-
-
-
-  carta.style.left =
-
-    Math.random() *
-
-    95 +
-
-    "%";
-
-
-
-
-
-  const escala =
-
-    0.7 +
-
-    Math.random() *
-
-    0.6;
-
-
-
-
-
-  carta.style.scale =
-
-    escala;
-
-
-
-
-
-  const duracion =
-
-    5 +
-
-    Math.random() *
-
-    5;
-
-
-
-
-
-  carta.style.animationDuration =
-
-    duracion +
-
-    "s";
-
-
-
-
-
-  carta.style.animationDelay =
-
-    Math.random() *
-
-    .5 +
-
-    "s";
-
-
-
-
-
-  lluviaCartas.appendChild(
-
-    carta
-
-  );
-
-
-
-
-
-  setTimeout(
-
-
-
-    () => {
-
-
-
-      carta.remove();
-
-
-
-    },
-
-
-
-    (duracion + 1) *
-
-    1000
-
-
-
-  );
-
-
-
-}
-
-
-
-
-
-/* =====================================================
-
-   CARTAS RESPONSIVE
-
-\===================================================== */
-
-
-
-const esCelular =
-
-
-
-  window.matchMedia(
-
-    "(max-width: 600px)"
-
-  ).matches;
-
-
-
-
-
-const frecuenciaCartas =
-
-
-
-  esCelular
-
-    ? 700
-
-    : 450;
-
-
-
-
-
-setInterval(
-
-  crearCarta,
-
-  frecuenciaCartas
-
-);
-
-
-
-
-
-const cartasIniciales =
-
-
-
-  esCelular
-
-    ? 6
-
-    : 10;
-
-
-
-
-
-for (
-
-  let i = 0;
-
-  i < cartasIniciales;
-
-  i++
-
-) {
-
-
-
-  setTimeout(
-
-    crearCarta,
-
-    i * 180
-
-  );
-
-
-
-}
-
-
-
-
-
-/* =====================================================
-
-   BOTÓN ENTRAR + MÚSICA
-
-\===================================================== */
-
-
-
-const btnEntrar =
-
-  document.getElementById(
-
-    "btnEntrar"
-
-  );
-
-
-
-
-
-const musicaFondo =
-
-  document.getElementById(
-
-    "musicaFondo"
-
-  );
-
-
-
-
-
-btnEntrar.addEventListener(
-
-
-
-  "click",
-
-
-
-  () => {
-
-
-
-
-
-    musicaFondo.volume =
-
-      0.7;
-
-
-
-
-
-    musicaFondo
-
-      .play()
-
-      .catch(
-
-
-
-        error => {
-
-
-
-          console.log(
-
-            "No se pudo reproducir la música:",
-
-            error
-
-          );
-
-
-
-        }
-
-
-
-      );
-
-
-
-
-
-    document
-
-      .getElementById(
-
-        "bienvenida"
-
-      )
-
-      .scrollIntoView({
-
-
-
-        behavior:
-
-          "smooth"
-
-
-
-      });
-
-
-
-  }
-
-
-
-);
-
-
-
-
-
-/* =====================================================
-
-   CUENTA REGRESIVA
-
-   1 NOVIEMBRE 2026
-
-   5:00 PM
-
-\===================================================== */
-
-
-
-const fechaEvento =
-
-
-
-  new Date(
-
-    "2026-11-01T13:00:00-06:00"
-
-  );
-
-
-
-
-
-const diasElemento =
-
-  document.getElementById(
-
-    "dias"
-
-  );
-
-
-
-
-
-const horasElemento =
-
-  document.getElementById(
-
-    "horas"
-
-  );
-
-
-
-
-
-const minutosElemento =
-
-  document.getElementById(
-
-    "minutos"
-
-  );
-
-
-
-
-
-const segundosElemento =
-
-  document.getElementById(
-
-    "segundos"
-
-  );
-
-
-
-
-
-function actualizarContador() {
-
-
-
-  const ahora =
-
-    new Date();
-
-
-
-
-
-  const diferencia =
-
-    fechaEvento -
-
-    ahora;
-
-
-
-
-
-  if (
-
-    diferencia <= 0
-
-  ) {
-
-
-
-    diasElemento.textContent =
-
-      "00";
-
-
-
-    horasElemento.textContent =
-
-      "00";
-
-
-
-    minutosElemento.textContent =
-
-      "00";
-
-
-
-    segundosElemento.textContent =
-
-      "00";
-
-
-
-    return;
-
-
-
-  }
-
-
-
-
-
-  const dias =
-
-
-
-    Math.floor(
-
-
-
-      diferencia /
-
-
-
-      (
-
-        1000 *
-
-        60 *
-
-        60 *
-
-        24
-
-      )
-
-
-
-    );
-
-
-
-
-
-  const horas =
-
-
-
-    Math.floor(
-
-
-
-      (
-
-
-
-        diferencia %
-
-
-
-        (
-
-          1000 *
-
-          60 *
-
-          60 *
-
-          24
-
-        )
-
-
-
-      )
-
-
-
-      /
-
-
-
-      (
-
-        1000 *
-
-        60 *
-
-        60
-
-      )
-
-
-
-    );
-
-
-
-
-
-  const minutos =
-
-
-
-    Math.floor(
-
-
-
-      (
-
-
-
-        diferencia %
-
-
-
-        (
-
-          1000 *
-
-          60 *
-
-          60
-
-        )
-
-
-
-      )
-
-
-
-      /
-
-
-
-      (
-
-        1000 *
-
-        60
-
-      )
-
-
-
-    );
-
-
-
-
-
-  const segundos =
-
-
-
-    Math.floor(
-
-
-
-      (
-
-
-
-        diferencia %
-
-
-
-        (
-
-          1000 *
-
-          60
-
-        )
-
-
-
-      )
-
-
-
-      /
-
-
-
-      1000
-
-
-
-    );
-
-
-
-
-
-  diasElemento.textContent =
-
-
-
-    String(dias)
-
-      .padStart(
-
-        2,
-
-        "0"
-
-      );
-
-
-
-
-
-  horasElemento.textContent =
-
-
-
-    String(horas)
-
-      .padStart(
-
-        2,
-
-        "0"
-
-      );
-
-
-
-
-
-  minutosElemento.textContent =
-
-
-
-    String(minutos)
-
-      .padStart(
-
-        2,
-
-        "0"
-
-      );
-
-
-
-
-
-  segundosElemento.textContent =
-
-
-
-    String(segundos)
-
-      .padStart(
-
-        2,
-
-        "0"
-
-      );
-
-
-
-}
-
-
-
-
-
-actualizarContador();
-
-
-
-
-
-setInterval(
-
-  actualizarContador,
-
-  1000
-
-);
-
-
-
-
-
-/* =====================================================
-
-   WHATSAPP
-
-\===================================================== */
-
-
-
-const btnWhatsapp =
-
-  document.getElementById(
-
-    "btnWhatsapp"
-
-  );
-
-
-
-
-
-btnWhatsapp.addEventListener(
-
-
-
-  "click",
-
-
-
-  function(evento) {
-
-
-
-    evento.preventDefault();
-
-
-
-
-
-    const mensaje =
-
-
-
-      "Hola, confirmo mi asistencia a los XV años de Mia Nicol. ♥";
-
-
-
-
-
-    /*
-
-       COLOCA AQUÍ EL NÚMERO.
-
-
-
-       EJEMPLO:
-
-       const telefono = "524431234567";
-
-    */
-
-
-
-    const telefono =
-
-      "";
-
-
-
-
-
-    if (!telefono) {
-
-
-
-      alert(
-
-        "Falta agregar el número de WhatsApp."
-
-      );
-
-
-
-      return;
-
-
-
+    :root {
+      --rojo: #8d0019;
+      --rojo-oscuro: #4d000d;
+      --rojo-claro: #c81d3b;
+      --rojo-carmesim: #b4122c;
+      --dorado: #c9a55c;
+      --dorado-brillante: #f5d77f;
+      --dorado-claro: #e3c984;
+      --dorado-oscuro: #8f6c25;
+      --crema: #f6efe4;
+      --crema-oscuro: #e7d8c3;
+      --crema-pergamino: #fdf8ef;
+      --negro: #161313;
+      --negro-terciopelo: #120813;
+      --negro-carta: #1c101c;
+      --azul-alicia: #7cb6d8;
+      --sombrerero-purpura: #3b1647;
+      --titulo: "Alice", "Cinzel Decorative", "Cinzel", serif;
+      --nombre: "Great Vibes", cursive;
+      --texto: "Montserrat", sans-serif;
+      --sombras-oro: 0 10px 30px rgba(201, 165, 92, 0.25);
+      --sombras-reina: 0 15px 40px rgba(141, 0, 25, 0.4);
     }
 
-
-
-
-
-    const url =
-
-
-
-      "https\://wa.me/" +
-
-
-
-      telefono +
-
-
-
-      "?text=" +
-
-
-
-      encodeURIComponent(
-
-        mensaje
-
-      );
-
-
-
-
-
-    window.open(
-
-      url,
-
-      "_blank"
-
-    );
-
-
-
-  }
-
-
-
-);
-
-
-
-
-/* =====================================================
-   LLUVIA DE CARTAS · GALERÍA DE MIA
+    /* =====================================================
+   GENERAL & DESIGN SYSTEM
 ===================================================== */
-const lluviaGaleria = document.getElementById("lluviaGaleria");
-let intervaloGaleria = null;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-function crearCartaGaleria() {
-  if (!lluviaGaleria) return;
-  const carta = document.createElement("div");
-  carta.classList.add("carta-lluvia");
-  const simbolo = simbolosCartas[Math.floor(Math.random() * simbolosCartas.length)];
-  carta.textContent = simbolo;
-  carta.classList.add((simbolo === "♥" || simbolo === "♦") ? "carta-roja" : "carta-negra");
-  carta.style.left = (Math.random() * 94) + "%";
-  carta.style.scale = (0.55 + Math.random() * 0.45);
-  const duracion = 5 + Math.random() * 4;
-  carta.style.animationDuration = duracion + "s";
-  lluviaGaleria.appendChild(carta);
-  setTimeout(() => carta.remove(), (duracion + 1) * 1000);
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-if (lluviaGaleria) {
-  const observadorGaleria = new IntersectionObserver((entradas) => {
-    entradas.forEach((entrada) => {
-      if (entrada.isIntersecting) {
-        if (!intervaloGaleria) {
-          for (let i = 0; i < (esCelular ? 5 : 8); i++) {
-            setTimeout(crearCartaGaleria, i * 180);
-          }
-          intervaloGaleria = setInterval(crearCartaGaleria, esCelular ? 850 : 600);
-        }
-      } else if (intervaloGaleria) {
-        clearInterval(intervaloGaleria);
-        intervaloGaleria = null;
+    body {
+      font-family: var(--texto);
+      background: var(--crema);
+      color: var(--negro);
+      overflow-x: hidden;
+      line-height: 1.6;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(201, 165, 92, 0.08) 0%, transparent 70%),
+        radial-gradient(circle at 0% 100%, rgba(141, 0, 25, 0.05) 0%, transparent 60%);
+    }
+
+    /* Scrollbar Customization */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--negro-terciopelo);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--rojo), var(--dorado));
+      border-radius: 5px;
+      border: 2px solid var(--negro-terciopelo);
+    }
+
+    ::selection {
+      background: var(--rojo);
+      color: var(--dorado-claro);
+    }
+
+    .seccion {
+      position: relative;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .contenedor {
+      width: 100%;
+      max-width: 920px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: var(--titulo);
+      font-size: clamp(2.2rem, 7vw, 3.8rem);
+      color: var(--rojo);
+      margin-bottom: 25px;
+      text-shadow: 0 2px 10px rgba(141, 0, 25, 0.15);
+      letter-spacing: 1px;
+    }
+
+    .subtitulo {
+      font-family: var(--titulo);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+      color: var(--dorado-oscuro);
+      font-weight: 600;
+    }
+
+    .claro,
+    .titulo-claro {
+      color: #ffffff;
+    }
+
+    .titulo-claro {
+      text-shadow: 0 0 15px rgba(245, 215, 127, 0.4), 0 3px 12px rgba(0, 0, 0, 0.8);
+    }
+
+    .corona,
+    .simbolo {
+      display: inline-block;
+      color: var(--dorado);
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 4px 8px rgba(201, 165, 92, 0.3));
+      transition: transform 0.4s ease;
+    }
+
+    .corona:hover,
+    .simbolo:hover {
+      transform: scale(1.15) rotate(5deg);
+    }
+
+    /* =====================================================
+   LLUVIA DE CARTAS (PLAYING CARD RAIN)
+===================================================== */
+    .lluvia-cartas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .carta-lluvia {
+      position: absolute;
+      top: -120px;
+      width: 50px;
+      height: 72px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffffff 0%, #f7ebd9 100%);
+      border: 1.5px solid var(--dorado);
+      border-radius: 6px;
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 0 8px rgba(201, 165, 92, 0.2);
+      opacity: 0;
+      animation-name: caerCarta;
+      animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      animation-fill-mode: forwards;
+    }
+
+    .carta-roja {
+      color: var(--rojo);
+      text-shadow: 0 1px 2px rgba(141, 0, 25, 0.3);
+    }
+
+    .carta-negra {
+      color: var(--negro-carta);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes caerCarta {
+      0% {
+        transform: translateY(-100px) translateX(0) rotate(0deg) rotateX(0deg);
+        opacity: 0;
       }
-    });
-  }, { threshold: 0.12 });
-  observadorGaleria.observe(lluviaGaleria.parentElement);
-}
 
-</script>
+      15% {
+        opacity: 0.9;
+      }
 
+      40% {
+        transform: translateY(35vh) translateX(35px) rotate(180deg) rotateY(180deg);
+      }
 
+      70% {
+        transform: translateY(70vh) translateX(-30px) rotate(360deg) rotateX(180deg);
+      }
 
+      100% {
+        transform: translateY(125vh) translateX(25px) rotate(540deg) rotateY(360deg);
+        opacity: 0;
+      }
+    }
 
+    /* =====================================================
+   PORTADA (HERO SECTION)
+===================================================== */
+    .portada {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 50px 20px;
+      color: white;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 40%, rgba(141, 0, 25, 0.88) 0%, rgba(20, 4, 12, 0.98) 75%);
+    }
 
-</body>
+    .portada::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('patron-cartas.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      z-index: 1;
+    }
 
+    .portada::before {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border: 2px solid var(--dorado);
+      outline: 1px solid rgba(201, 165, 92, 0.3);
+      outline-offset: -8px;
+      pointer-events: none;
+      z-index: 4;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
+    }
 
+    .portada-contenido {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: 680px;
+      text-align: center;
+      padding: 20px;
+    }
 
-</html>
+    .texto-pequeno {
+      font-family: var(--titulo);
+      letter-spacing: 8px;
+      font-size: 0.9rem;
+      color: var(--dorado-brillante);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(245, 215, 127, 0.5);
+    }
+
+    .portada h1 {
+      font-family: var(--nombre);
+      font-size: clamp(4.8rem, 18vw, 8.5rem);
+      font-weight: normal;
+      line-height: 0.95;
+      background: linear-gradient(180deg, #ffffff 0%, var(--dorado-claro) 60%, var(--dorado) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.8));
+      margin: 10px 0;
+    }
+
+    .separador {
+      margin: 20px 0;
+      color: var(--dorado-brillante);
+      font-size: 2.4rem;
+      text-shadow: 0 0 15px rgba(201, 165, 92, 0.8);
+      animation: pulsoCrown 3s ease-in-out infinite;
+    }
+
+    @keyframes pulsoCrown {
+
+      0%,
+      100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px var(--dorado));
+      }
+
+      50% {
+        transform: scale(1.12);
+        filter: drop-shadow(0 0 18px var(--dorado-brillante));
+      }
+    }
+
+    .frase-portada {
+      max-width: 480px;
+      margin: auto;
+      line-height: 1.8;
+      font-family: var(--titulo);
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.92);
+      font-style: italic;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .fecha-portada {
+      margin: 28px 0 35px;
+      color: var(--dorado-claro);
+      font-family: var(--titulo);
+      letter-spacing: 6px;
+      font-size: 1.05rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      border-top: 1px solid rgba(201, 165, 92, 0.3);
+      border-bottom: 1px solid rgba(201, 165, 92, 0.3);
+      display: inline-block;
+      padding: 10px 25px;
+    }
+
+    /* Royal Buttons */
+    .btn-principal {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--rojo-carmesim) 0%, var(--rojo) 50%, var(--rojo-oscuro) 100%);
+      color: var(--dorado-brillante);
+      font-family: var(--titulo);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 18px 38px;
+      border: 2px solid var(--dorado);
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(141, 0, 25, 0.5), inset 0 0 15px rgba(245, 215, 127, 0.3);
+      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-principal::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transition: left 0.6s ease;
+      z-index: -1;
+    }
+
+    .btn-principal:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 15px 40px rgba(141, 0, 25, 0.7), 0 0 20px rgba(201, 165, 92, 0.6);
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+
+    .btn-principal:hover::before {
+      left: 100%;
+    }
+
+    .btn-principal:active {
+      transform: translateY(-1px) scale(0.99);
+    }
+
+    .scroll-indicador {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      font-family: var(--titulo);
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--dorado-claro);
+      opacity: 0.85;
+    }
+
+    .flecha {
+      font-size: 1.4rem;
+      margin-top: 5px;
+      animation: flotarFlecha 2s infinite;
+      color: var(--dorado-brillante);
+    }
+
+    @keyframes flotarFlecha {
+
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: 0.6;
+      }
+
+      50% {
+        transform: translateY(8px);
+        opacity: 1;
+      }
+    }
+
+    /* =====================================================
+   BIENVENIDA
+===================================================== */
+    .bienvenida {
+      background: linear-gradient(180deg, var(--crema) 0%, var(--crema-pergamino) 100%);
+    }
+
+    .bienvenida .contenedor {
+      background: rgba(253, 248, 239, 0.85);
+      padding: 50px 30px;
+      border-radius: 20px;
+      border: 1px solid var(--dorado-claro);
+      box-shadow: 0 15px 45px rgba(201, 165, 92, 0.15);
+      backdrop-filter: blur(5px);
+    }
+
+    .marco-foto {
+      position: relative;
+      width: min(280px, 75vw);
+      aspect-ratio: 4/5;
+      margin: 25px auto 35px;
+      border-radius: 180px 180px 20px 20px;
+      padding: 10px;
+      background: linear-gradient(135deg, var(--dorado-brillante) 0%, var(--dorado) 50%, var(--dorado-oscuro) 100%);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 0 0 20px rgba(201, 165, 92, 0.3);
+    }
+
+    .foto-mia {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 170px 170px 15px 15px;
+      display: block;
+      transition: transform 0.6s ease;
+      border: 2px solid #ffffff;
+    }
+
+    .marco-foto:hover .foto-mia {
+      transform: scale(1.04);
+    }
+
+    .texto-bienvenida {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      color: var(--negro);
+    }
+
+    .texto-destacado {
+      font-family: var(--titulo);
+      font-size: 1.3rem;
+      color: var(--rojo);
+      font-weight: 600;
+      margin-top: 15px;
+    }
+
+    /* =====================================================
+   PADRES Y PADRINOS
+===================================================== */
+    .padres-padrinos {
+      margin-top: 35px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(201, 165, 92, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .padres-padrinos p {
+      font-family: var(--titulo);
+      font-size: 1.1rem;
+      color: var(--rojo-oscuro);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .padres-padrinos p strong {
+      display: block;
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--dorado-oscuro);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    /* =====================================================
+   SEPARADOR ALICIA
+===================================================== */
+    .separador-alicia {
+      width: 100%;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .separador-alicia img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid var(--dorado);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+      transition: transform 0.5s ease;
+    }
+
+    .separador-alicia img:hover {
+      transform: scale(1.015);
+    }
+
+    /* =====================================================
+   TRANSICIÓN CARTAS
+===================================================== */
+    .transicion-cartas {
+      background: var(--negro-terciopelo);
+      padding: 25px 0;
+      border-top: 2px solid var(--dorado);
+      border-bottom: 2px solid var(--dorado);
+    }
+
+    .transicion-overlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
+      font-size: 2rem;
+    }
+
+    .transicion-overlay span {
+      color: var(--dorado-brillante);
+      animation: pulsoSuit 2s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 8px var(--dorado));
+    }
+
+    .transicion-overlay span:nth-child(2) {
+      color: #ffffff;
+      animation-delay: 0.3s;
+    }
+
+    .transicion-overlay span:nth-child(3) {
+      color: var(--rojo-claro);
+      animation-delay: 0.6s;
+    }
+
+    .transicion-overlay span:nth-child(4) {
+      color: var(--dorado-claro);
+      animation-delay: 0.9s;
+    }
+
+    @keyframes pulsoSuit {
+      0% {
+        transform: scale(1) translateY(0);
+      }
+
+      100% {
+        transform: scale(1.25) translateY(-4px);
+      }
+    }
+
+    /* =====================================================
+   LA CORTE DE LA REINA
+===================================================== */
+    .corte-reina {
+      background: linear-gradient(135deg, #3a000a 0%, #170004 60%, #0d0002 100%);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .decoracion-reina {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(6rem, 15vw, 12rem);
+      opacity: 0.08;
+      color: var(--rojo-claro);
+      pointer-events: none;
+    }
+
+    .decoracion-izquierda {
+      left: -30px;
+    }
+
+    .decoracion-derecha {
+      right: -30px;
+    }
+
+    .subtitulo-reina {
+      font-family: var(--titulo);
+      color: var(--dorado-brillante);
+      letter-spacing: 5px;
+      font-size: 0.95rem;
+      margin-bottom: 35px;
+      text-shadow: 0 0 10px rgba(245, 215, 127, 0.5);
+    }
+
+    .reina-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+      text-align: left;
+      background: rgba(20, 5, 10, 0.6);
+      padding: 40px;
+      border-radius: 24px;
+      border: 2px solid var(--dorado);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(141, 0, 25, 0.3);
+    }
+
+    .reina-imagen-contenedor {
+      position: relative;
+      text-align: center;
+    }
+
+    .corona-reina {
+      font-size: 3rem;
+      color: var(--dorado-brillante);
+      margin-bottom: -15px;
+      position: relative;
+      z-index: 2;
+      animation: pulsoCrown 2.5s infinite;
+    }
+
+    .imagen-reina {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.7));
+      transition: transform 0.5s ease;
+    }
+
+    .imagen-reina:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
+
+    .reina-texto {
+      background: rgba(253, 248, 239, 0.96);
+      color: var(--negro);
+      padding: 35px 30px;
+      border-radius: 16px;
+      border: 2px solid var(--dorado);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .reina-corazon {
+      color: var(--rojo);
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .reina-pretexto {
+      font-family: var(--titulo);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      color: var(--rojo);
+    }
+
+    .reina-texto h2 {
+      color: var(--rojo);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 15px;
+      line-height: 1.1;
+    }
+
+    .reina-texto h2 span {
+      font-family: var(--nombre);
+      display: block;
+      font-size: 3.2rem;
+      color: var(--rojo-oscuro);
+      font-weight: normal;
+    }
+
+    .separador-reina {
+      color: var(--dorado-oscuro);
+      letter-spacing: 6px;
+      font-size: 1.2rem;
+      margin: 15px 0;
+    }
+
+    .reina-mensaje {
+      font-family: var(--titulo);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--rojo-oscuro);
+      margin-bottom: 10px;
+    }
+
+    .reina-descripcion {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #333333;
+      margin-bottom: 20px;
+    }
+
+    .reina-fecha {
+      display: inline-block;
+      background: var(--rojo);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-family: var(--titulo);
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+      box-shadow: 0 6px 18px rgba(141, 0, 25, 0.4);
+    }
+
+    .reina-fecha strong {
+      font-size: 1.4rem;
+      color: var(--dorado-brillante);
+      margin: 0 6px;
+    }
+
+    /* =====================================================
+   FRANJA REINA
+===================================================== */
+    .franja-reina {
+      background: linear-gradient(90deg, var(--rojo-oscuro) 0%, var(--rojo) 50%, var(--rojo-oscuro) 100%);
+      color: var(--dorado-brillante);
+      padding: 18px 20px;
+      font-family: var(--titulo);
+      letter-spacing: 4px;
+      font-size: 1.05rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      border-top: 2px solid var(--dorado);
+      border-bottom: 2px solid var(--dorado);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .franja-reina span {
+      font-size: 1.3rem;
+    }
+
+    /* =====================================================
+   CUENTA REGRESIVA
+===================================================== */
+    .cuenta-regresiva {
+      background: radial-gradient(circle at center, #1b0a1c 0%, #0c040d 100%);
+      color: white;
+      padding: 110px 20px;
+    }
+
+    .reloj-icono {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      display: inline-block;
+      animation: balanceoClock 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 15px rgba(245, 215, 127, 0.5));
+    }
+
+    @keyframes balanceoClock {
+
+      0%,
+      100% {
+        transform: rotate(-8deg);
+      }
+
+      50% {
+        transform: rotate(8deg);
+      }
+    }
+
+    .fecha-evento {
+      font-family: var(--titulo);
+      color: var(--dorado-claro);
+      letter-spacing: 3px;
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    .contador {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .contador-item {
+      background: rgba(35, 12, 38, 0.85);
+      border: 2px solid var(--dorado);
+      border-radius: 18px;
+      padding: 22px 18px;
+      min-width: 125px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(201, 165, 92, 0.2);
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .contador-item:hover {
+      transform: translateY(-6px);
+      border-color: #ffffff;
+    }
+
+    .contador-item span {
+      font-family: var(--titulo);
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      font-weight: 700;
+      color: var(--dorado-brillante);
+      display: block;
+      line-height: 1;
+      text-shadow: 0 0 12px rgba(245, 215, 127, 0.6);
+    }
+
+    .contador-item small {
+      font-family: var(--titulo);
+      letter-spacing: 3px;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 8px;
+      display: block;
+    }
+
+    /* =====================================================
+   LUGAR (CEREMONIA & RECEPCIÓN)
+===================================================== */
+    .lugar {
+      background: var(--crema);
+    }
+
+    .tarjeta-lugar {
+      background: var(--crema-pergamino);
+      border: 2px solid var(--dorado);
+      border-radius: 20px;
+      padding: 45px 30px;
+      max-width: 550px;
+      margin: 30px auto 0;
+      box-shadow: 0 15px 40px rgba(201, 165, 92, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tarjeta-lugar::before {
+      content: "♥";
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.8rem;
+      color: rgba(141, 0, 25, 0.15);
+    }
+
+    .icono-lugar {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      display: inline-block;
+      background: linear-gradient(135deg, var(--dorado-brillante), var(--dorado-oscuro));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    }
+
+    .tarjeta-lugar h3 {
+      font-family: var(--titulo);
+      letter-spacing: 4px;
+      color: var(--rojo);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .nombre-lugar {
+      font-family: var(--titulo);
+      font-size: 1.8rem;
+      color: var(--negro);
+      margin-bottom: 10px;
+    }
+
+    .tarjeta-lugar strong {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--rojo-carmesim);
+      margin: 10px 0;
+      font-family: var(--titulo);
+    }
+
+    .direccion {
+      color: #666666;
+      margin-bottom: 25px;
+      font-size: 0.95rem;
+    }
+
+    .btn-secundario {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--rojo);
+      font-family: var(--titulo);
+      font-weight: 600;
+      letter-spacing: 2px;
+      padding: 14px 30px;
+      border: 2px solid var(--rojo);
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secundario:hover {
+      background: var(--rojo);
+      color: white;
+      box-shadow: 0 8px 25px rgba(141, 0, 25, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Cheshire Cat Floating Animation */
+    .gato-recepcion {
+      width: min(240px, 60vw);
+      height: auto;
+      margin: 0 auto 20px;
+      display: block;
+      filter: drop-shadow(0 10px 25px rgba(123, 75, 178, 0.5));
+      animation: gatoFlotante 4s ease-in-out infinite;
+    }
+
+    @keyframes gatoFlotante {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-2deg) scale(1);
+      }
+
+      50% {
+        transform: translateY(-12px) rotate(2deg) scale(1.04);
+      }
+    }
+
+    /* =====================================================
+   ITINERARIO
+===================================================== */
+    .itinerario {
+      background: linear-gradient(180deg, #17051a 0%, #290a2e 100%);
+      color: white;
+      padding: 100px 20px;
+    }
+
+    .conejo-animado {
+      width: min(180px, 50vw);
+      height: auto;
+      margin: 0 auto 20px;
+      display: block;
+      filter: drop-shadow(0 10px 20px rgba(245, 215, 127, 0.4));
+      animation: conejoSaltarin 3s ease-in-out infinite;
+    }
+
+    @keyframes conejoSaltarin {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-10px) rotate(-3deg);
+      }
+    }
+
+    .itinerario-intro {
+      color: var(--dorado-claro);
+      font-family: var(--titulo);
+      margin-bottom: 50px;
+      font-style: italic;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 650px;
+      margin: auto;
+      padding-left: 20px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--dorado-brillante), var(--rojo-claro), var(--dorado));
+      border-radius: 2px;
+    }
+
+    .evento {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 35px;
+      position: relative;
+      text-align: left;
+    }
+
+    .hora {
+      font-family: var(--titulo);
+      font-weight: 700;
+      color: var(--dorado-brillante);
+      min-width: 110px;
+      font-size: 1.1rem;
+      text-align: right;
+      text-shadow: 0 0 8px rgba(245, 215, 127, 0.4);
+    }
+
+    .punto {
+      width: 32px;
+      height: 32px;
+      background: var(--rojo);
+      color: var(--dorado-brillante);
+      border: 2px solid var(--dorado);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      z-index: 2;
+      box-shadow: 0 0 12px rgba(201, 165, 92, 0.6);
+      flex-shrink: 0;
+    }
+
+    .evento-info {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(201, 165, 92, 0.3);
+      padding: 15px 25px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex: 1;
+      backdrop-filter: blur(5px);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .evento-info:hover {
+      transform: translateX(6px);
+      border-color: var(--dorado-brillante);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .evento-info span {
+      font-size: 1.8rem;
+    }
+
+    .evento-info h3 {
+      font-family: var(--titulo);
+      font-size: 1.2rem;
+      color: white;
+      font-weight: 500;
+    }
+
+    /* =====================================================
+   DRESS CODE
+===================================================== */
+    .dress-code {
+      background: linear-gradient(135deg, #2b0007 0%, #150003 100%);
+      color: white;
+    }
+
+    .dress-code
